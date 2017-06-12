@@ -1,0 +1,15 @@
+sudo: required
+dist: trusty
+
+language: node_js
+node_js:
+  - "6"
+
+install:
+  - pushd dl && npm install && popd
+  - pushd web && npm install && popd
+  - pushd electron && npm install && popd
+
+script:
+  - pushd web && npm run electron && popd && pushd electron && npm run release && popd
+
