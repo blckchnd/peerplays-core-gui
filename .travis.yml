@@ -19,5 +19,3 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-  on:
-    repo: blckchnd/peerplays-core-gui
