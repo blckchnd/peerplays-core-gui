@@ -9,6 +9,7 @@ install:
 - pushd electron && npm install && popd
 script:
 - pushd web && npm run electron && popd && pushd electron && npm run release && popd
+- pushd electron/releases && sha1sum *.deb && popd
 deploy:
   provider: releases
   api_key:
