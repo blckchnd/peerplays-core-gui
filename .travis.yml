@@ -9,8 +9,8 @@ install:
 - pushd electron && npm install && popd
 script:
 - pushd web && npm run electron && popd
-  pushd electron/build && npm install && popd
-  pushd electron && npm run release && popd
+- pushd electron/build && npm install && popd
+- pushd electron && npm run release && popd
 - pushd electron/releases && sha1sum *.deb > linux.sha1sum && cat linux.sha1sum && popd
 deploy:
   provider: releases
