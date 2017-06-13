@@ -8,13 +8,15 @@ install:
 - pushd web && npm install && popd
 - pushd electron && npm install && popd
 script:
-- pushd web && npm run electron && popd && pushd electron && npm run release && popd
-- pushd electron/releases && sha1sum *.deb && popd
+- pushd web && npm run electron && popd
+  pushd electron/build && npm install && popd
+  pushd electron && npm run release && popd
+- pushd electron/releases && sha1sum *.deb > linux.sha1sum && cat linux.sha1sum && popd
 deploy:
   provider: releases
   api_key:
     secure: CNQCGWD0Be9+lkzLUiir+jQzP6ufHy2csIznKf7p+tluhXetXKB05GUwezA1nh06wh5gq/RbNiRz8slqWhJnoeofStPe8FzRMUYhALf4iojizl+GvD93nJ/MHObiKMRrZj9eU4XhtKbwpc/+BGZHDGL26dEd/kyEiUX5QL3XPi4ntRQQH+9PXRb+wifyRs7+rzkefhwjEYqhQMqm1rfP2qTI6onwglMU2w41j1R7jPR8dRe1YxcG+NoBthUhEUnWKAPufxtvKpnljqFYyfR6Oz9rnGGoamh7POAmnwlghc65fm6VrHI7x9PsyU/6HUJFQzKWw1L4ivtD07JrJ7Kvi1/lA4dRiJ0BWRwvgbhx9BmOXvtMUSRPDf2iJrHFbnd9gwVmPj7ppvnPBdiCRGr8LbYw8T3nMSzAa3d7oul5LHuiqDmQLgJqDA7ytW8lOuiyVcbWY82Sq98wJB9Y1gFZTK+dC3fNiU+cKYQ6Zgtab5ZundUSzC6Fw7Nt3theRNrMPztryAwSXs1w5bkdSnv7U+tuELlus++mFEVwWFYyRSJgy6uime7oxOlKBbOaRl5QZ6xM3RNPSQ4IumFjg2pYK96CKWrRB0vl2VqCmCnnH7tppLGDn8phTr20xkxrLHtRn6sCP+3aQDGDJVT2TvFmRFligUxFzxUcutt4Sle5rlI=
-  file: electron/releases/*.{dmg,deb}
+  file: electron/releases/*
   file_glob: true
   overwrite: true
   skip_cleanup: true
