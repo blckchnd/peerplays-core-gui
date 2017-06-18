@@ -27,7 +27,7 @@ import {connect} from "react-redux";
 import Translate from "react-translate-component";
 import Logo from "../Forms/Logo";
 import RegisterForm from "./RegisterForm";
-import LanguageSwitcher from "../Common/LanguageSwitcher";
+import LanguageDropdown from "../Common/LanguageDropdown";
 import RegisterActions from "actions/RegisterActions";
 import NavigateActions from "actions/NavigateActions";
 
@@ -67,7 +67,9 @@ class Register extends React.Component {
                 <section className="content">
                     <div className="box box-inPadding">
                         <div className="dialog dialog-login">
-                            <LanguageSwitcher />
+                            <div className="lang__wrap">
+                                <LanguageDropdown />
+                            </div>
                             <Logo />
                             <Translate component="h1" className="h1" content="sign_up.welcome" tm={<span className="tm">TM</span>}/>
                             <Translate component="h2" className="h2" content="sign_up.please_create" />

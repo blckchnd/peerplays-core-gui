@@ -28,7 +28,7 @@ import Logo from "../Forms/Logo";
 import LoginForm from "./LoginForm"
 import NavigateActions from "actions/NavigateActions";
 import LoginActions from "actions/LoginActions";
-import LanguageSwitcher from "../Common/LanguageSwitcher";
+import LanguageDropdown from "../Common/LanguageDropdown";
 import Translate from "react-translate-component";
 
 @connect(
@@ -90,7 +90,9 @@ class Login extends React.Component {
                 <section className="content">
                     <div className="box box-inPadding">
                         <div className="dialog dialog-login">
-                            <LanguageSwitcher />
+                            <div className="lang__wrap">
+                                <LanguageDropdown />
+                            </div>
                             <Logo />
                             <Translate component="h1" className="h1" content="login.login_form_title" tm={<span className="tm">TM</span>} />
 

@@ -3,7 +3,7 @@ var alt = require("../alt-instance");
 
 var locales = {};
 if (__ELECTRON__) {
-    ["cn", "de", "es", "fr", "ko", "tr"].forEach(locale => {
+    ["cn", "de", "es", "fr", "ko", "tr", "ru"].forEach(locale => {
         locales[locale] = require("json!assets/locales/locale-" + locale + ".json");
     });
 }
