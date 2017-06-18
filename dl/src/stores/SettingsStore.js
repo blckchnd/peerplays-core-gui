@@ -85,7 +85,8 @@ class SettingsStore {
                 "ko",
                 "de",
                 "es",
-                "tr"
+                "tr",
+                "ru"
             ],
             connection: [
                 "wss://bitshares.openledger.info/ws",

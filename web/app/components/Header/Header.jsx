@@ -28,12 +28,12 @@ import counterpart from "counterpart";
 import {connect} from 'react-redux';
 import classNames from 'classnames';
 
-
-
 import Notices from './Notices';
 import AppActions from 'actions/AppActions';
 import HelpActions from 'actions/HelpActions';
 import Translate from "react-translate-component";
+
+import LanguageDropdown from "../Common/LanguageDropdown";
 
 @connect(
 	(state)=> {
@@ -71,7 +71,6 @@ class Header extends React.Component {
 		let {linkedAccounts, currentAccount, starredAccounts} = this.props;
 		let settings = counterpart.translate("header.settings");
 		let help = counterpart.translate("header.help");
-
 
 		return (
 			<div className="header">
@@ -122,6 +121,11 @@ class Header extends React.Component {
 			                </span>
 						</Link> */}
 					</div>
+
+					<div className="nav__right nav-bdl">
+						<LanguageDropdown />
+					</div>
+
 					<nav className="nav">
 
 						<Link to="/dashboard" className={classNames({"nav__link": true, "active": (/\/send|\/deposit-withdraw|\/account\/vesting/.test(this.props.pathname))})} activeClassName="active">
@@ -162,9 +166,7 @@ class Header extends React.Component {
 								<Translate component="span" className="nav__linkText" content="header.network" />
 							</span>
 						</Link>
-						
-						
-						
+
 						{/*<IndexLink to="/dashboard" className="nav__link bb" activeClassName="active">
 							<span className="nav__linkAlign">
 								<span className="nav__linkIcon nav__linkIcon-blank icon-funds"/>
@@ -195,7 +197,6 @@ class Header extends React.Component {
 						</Link>*/}
 					</nav>
 					<nav className="nav__right">
-
 					</nav>
 				</div>
 			</div>

@@ -1,0 +1,6 @@
+files:
+  - source: /web/app/assets/locales/locale-en.json
+    translation: /web/app/assets/locales/locale-%two_letters_code%.json
+    languages_mapping:
+      two_letters_code:
+        zh-TW: cn
