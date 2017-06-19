@@ -46,8 +46,6 @@ let locales = {};
 export function initSettings() {
     return function (dispatch, getState) {
         let state = getState();
-        if (!storageSettings.hasOwnProperty("locale"))
-            storageSettings['locale'] = 'ru';
         if (storageSettings) {
             let newSettings = {};
             let needUpdate = false;
