@@ -58,7 +58,7 @@ const initialState = {
             // "de",
             // "es",
             // "tr",
-            "ru",
+            "ru"
         ],
         unit: [
             CORE_ASSET,
