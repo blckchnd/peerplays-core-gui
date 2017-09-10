@@ -29,7 +29,7 @@ var Immutable = require("immutable");
 import {merge} from "lodash";
 import ls from "common/localStorage";
 
-const CORE_ASSET = "TESTPLAYS"; // Setting this to BTS to prevent loading issues when used with BTS chain which is the most usual case currently
+const CORE_ASSET = "PPYTEST"; // Setting this to BTS to prevent loading issues when used with BTS chain which is the most usual case currently
 
 const STORAGE_KEY = "__peerplays__";
 let ss = new ls(STORAGE_KEY);

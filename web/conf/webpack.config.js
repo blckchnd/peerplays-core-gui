@@ -32,9 +32,9 @@ module.exports = function(options) {
 	    SOFTWARE_UPDATE_REFERENCE_ACCOUNT_NAME: JSON.stringify(options.SOFTWARE_UPDATE_REFERENCE_ACCOUNT_NAME || "ppcoreupdates"),
 	    APP_VERSION: JSON.stringify(git.tag()),
 	    __ELECTRON__: !!options.electron,
-	    CORE_ASSET: JSON.stringify('PPY'),
-	    BLOCKCHAIN_URL: JSON.stringify(options.blockchain || 'wss://api.ppy.blckchnd.com'),
-	    FAUCET_URL: JSON.stringify(options.faucet || "https://ppyfaucet.blckchnd.com/api/v1/accounts"),
+	    CORE_ASSET: JSON.stringify('PPYTEST'),
+	    BLOCKCHAIN_URL: JSON.stringify(options.blockchain || 'wss://api.ppytest.blckchnd.com'),
+	    FAUCET_URL: JSON.stringify(options.faucet || "https://faucet.ppytest.com/api/v1/accounts"),
 	    FAUCET_FILE: JSON.stringify(options.faucetFile || "faucetUrls"),
 	    BITSHARES_WS: JSON.stringify(options.BITSHARES_WS || 'wss://node.market.rudex.org'),
     };

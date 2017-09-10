@@ -76,7 +76,7 @@ class ApplicationApi {
                     "num_committee": 0,
                     "votes": [ ]
                 }
-            })
+            });
             return WalletDb.process_transaction(
                 tr,
                 null, //signer_private_keys,

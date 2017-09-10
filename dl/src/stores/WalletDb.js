@@ -38,7 +38,7 @@ import {ChainStore, PrivateKey, key, Aes} from "peerplaysjs-lib";
 import {Apis, ChainConfig} from "peerplaysjs-ws";
 import AddressIndex from "stores/AddressIndex"
 
-ChainConfig.setPrefix("PPY");
+ChainConfig.setPrefix("PPYTEST");
 
 var aes_private
 var transaction

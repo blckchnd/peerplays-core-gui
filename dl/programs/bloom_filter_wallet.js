@@ -65,7 +65,7 @@ fs.readFile('bloom.dat', function (err, data) {
                 if(running_count % 100 === 0) console.error('processing', running_count)
                 if( ! keys.public_keys) unsupportedJsonFormat()
                 var key = keys.public_keys[k]
-                if( /^GPH/.test(key) ) key = "PPY" + key.substring(3)
+                if( /^GPH/.test(key) ) key = "PPYTEST" + key.substring(3)
                 if(in_bloom( key )) continue
                 var addresses = key_utils.addresses(key)
                 var addy_found = false
