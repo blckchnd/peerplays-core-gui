@@ -92,8 +92,8 @@ function fetchFaucetAddress(attempt, accountName, ownerPrivate, activePrivate, m
             body: JSON.stringify({
                 "account": {
                     "name": accountName,
-                    "owner_key": ownerPrivate.toPublicKey().toPublicKeyString(),
-                    "active_key": activePrivate.toPublicKey().toPublicKeyString(),
+                    "owner_key": activePrivate.toPublicKey().toPublicKeyString(),
+                    "active_key": ownerPrivate.toPublicKey().toPublicKeyString(),
                     "memo_key": memoPrivate.toPublicKey().toPublicKeyString(),
                     "refcode": referral,
                     "referrer": window && window.BTSW ? BTSW.referrer : ""
